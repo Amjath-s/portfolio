@@ -12,6 +12,21 @@ export default function Portfolio() {
   const skillRef = useRef(null);
   const isInView = useInView(skillRef, { once: true, amount: 1 });
 
+   const socialPlatforms = [
+     {
+       name: "GitHub",
+       // Using a direct CDN link for the GitHub logo
+       iconUrl: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
+       url: "https://github.com/Amjath-s", //
+     },
+     {
+       name: "LinkedIn",
+       // Using a direct CDN link for the LinkedIn logo
+       iconUrl: "https://cdn-icons-png.flaticon.com/512/174/174857.png", // LinkedIn logo CDN
+       url: "https://www.linkedin.com/in/amjath-s-39680823b/",
+     },
+   ];
+
   const frontendSkills = [
     {
       name: "React",
@@ -186,6 +201,33 @@ export default function Portfolio() {
               Contact Me
             </a>
           </motion.div>
+          <div className="flex flex-wrap justify-center gap-6 max-w-4xl mt-4">
+            {socialPlatforms.map((platform, index) => (
+              <motion.a
+                key={index}
+                href={platform.url}
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex flex-col items-center p-2 bg-white/3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out
+                       hover:scale-105 transform cursor-pointer min-w-[120px] sm:min-w-[140px]"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.08 }}
+              >
+                {/* Icon using img tag with CDN URL */}
+                <img
+                  src={platform.iconUrl}
+                  alt={`${platform.name} logo`}
+                  className="h-8 w-8 mb-2"
+                />
+
+                {/* Platform Name */}
+                <p className="text-base font-semibold text-gray-700">
+                  {platform.name}
+                </p>
+              </motion.a>
+            ))}
+          </div>
         </div>
       </section>
 
