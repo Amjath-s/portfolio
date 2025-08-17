@@ -15,14 +15,14 @@ export default function Portfolio() {
    const socialPlatforms = [
      {
        name: "GitHub",
-       // Using a direct CDN link for the GitHub logo
+      
        iconUrl: "https://cdn-icons-png.flaticon.com/512/25/25231.png",
        url: "https://github.com/Amjath-s", //
      },
      {
        name: "LinkedIn",
-       // Using a direct CDN link for the LinkedIn logo
-       iconUrl: "https://cdn-icons-png.flaticon.com/512/174/174857.png", // LinkedIn logo CDN
+       
+       iconUrl: "https://cdn-icons-png.flaticon.com/512/174/174857.png", 
        url: "https://www.linkedin.com/in/amjath-s-39680823b/",
      },
    ];
