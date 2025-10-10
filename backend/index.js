@@ -41,8 +41,9 @@ app.post("/api/contact", async (req, res) => {
     console.log("✅ Brevo response:", response.data);
     res.status(200).json({ message: "Message sent successfully!" });
   } catch (error) {
-    console.error("❌ Brevo API Error:", error.response?.data || error.message);
-    res.status(500).json({ error: "Failed to send email" });
+    console.error('❌ Full Error:', error);
+    console.error('❌ Brevo response data:', error.response?.data);
+    res.status(500).json({ error: 'Failed to send email', details: error.response?.data });
   }
 });
 
