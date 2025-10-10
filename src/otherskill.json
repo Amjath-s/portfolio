@@ -1,0 +1,44 @@
+[
+  {
+    "name": "REST API",
+    "logo": "https://cdn-icons-png.flaticon.com/512/3069/3069188.png",
+    "level": 50,
+    "tag": "Beginner"
+  },
+  {
+    "name": "Python",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "level": 45,
+    "tag": "Beginner"
+  },
+  {
+    "name": "SQLite",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
+    "level": 30,
+    "tag": "Beginner"
+  },
+  {
+    "name": "C",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+    "level": 40,
+    "tag": "Beginner"
+  },
+  {
+    "name": "C++",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+    "level": 40,
+    "tag": "Beginner"
+  },
+  {
+    "name": "Git",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    "level": 40,
+    "tag": "Beginner"
+  },
+  {
+    "name": "Appwrite",
+    "logo": "https://assets.streamlinehq.com/image/private/w_34,h_34,ar_1/f_auto/v1/icons/logos/appwrite-2txkg0je81h1a3cr3k23v8.png/appwrite-bu1lm9eeebv6gmkbpkbzwb.png?_a=DATAdtXyZAA0",
+    "level": 60,
+    "tag": "Intermediate"
+  }
+]

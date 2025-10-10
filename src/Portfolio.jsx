@@ -1,15 +1,22 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LightRays from "./LightRays";
 import { useInView } from "framer-motion";
-
+import axios from 'axios'
+import frontendSkills from "./frontend.json"
+import otherSkills from "./otherskill.json"
+import project from "./Project.json"
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Portfolio() {
   const heroRef = useRef(null);
   const skillRef = useRef(null);
+  const [name,setName]=useState('')
+  const [email,setEmail]=useState('')
+  const [message,setMessage]=useState('')
+  const [loading,setLoading]=useState(false )
   const isInView = useInView(skillRef, { once: true, amount: 1 });
 
    const socialPlatforms = [
@@ -26,108 +33,7 @@ export default function Portfolio() {
        url: "https://www.linkedin.com/in/amjath-s-39680823b/",
      },
    ];
-
-  const frontendSkills = [
-    {
-      name: "React",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      level: 65,
-      tag: "Intermediate",
-    },
-    {
-      name: "Node.js",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-      level: 60,
-      tag: "Intermediate",
-    },
-    {
-      name: "MongoDB",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-      level: 55,
-      tag: "Beginner/Intermediate",
-    },
-    {
-      name: "Express",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-      level: 55,
-      tag: "Beginner/Intermediate",
-    },
-    {
-      name: "Tailwind",
-      logo: "https://cdn.jsdelivr.net/gh/tailwindlabs/tailwindcss/.github/logo-dark.svg",
-      level: 55,
-      tag: "Beginner/Intermediate",
-    },
-    {
-      name: "Javascript",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-      level: 65,
-      tag: "intermediate",
-    },
-  ];
-
-  const otherSkills = [
-    {
-      name: "REST API",
-      logo: "https://cdn-icons-png.flaticon.com/512/3069/3069188.png",
-      level: 50,
-      tag: "Beginner",
-    },
-    {
-      name: "Python",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-      level: 45,
-      tag: "Beginner",
-    },
-    {
-      name: "SQLite",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
-      level: 30,
-      tag: "Beginner",
-    },
-    {
-      name: "C",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
-      level: 40,
-      tag: "Beginner",
-    },
-    {
-      name: "C++",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-      level: 40,
-      tag: "Beginner",
-    },
-    {
-      name: "Git",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-      level: 40,
-      tag: "Beginner",
-    },
-    {
-      name: "Appwrite",
-      logo: "https://assets.streamlinehq.com/image/private/w_34,h_34,ar_1/f_auto/v1/icons/logos/appwrite-2txkg0je81h1a3cr3k23v8.png/appwrite-bu1lm9eeebv6gmkbpkbzwb.png?_a=DATAdtXyZAA0",
-      level: 60,
-      tag: "intermediate",
-    },
-  ];
-
-  const project = [
-    {
-      project_name: "DOC AI",
-      content:
-        " Developed the React.js frontend for an AI-powered document manager that used OCR and prompt-engineering with ChatGPT to automate deadline tracking and enhance workflow efficiency an AI-powered office documentation and deadline tracker with a React.js frontend and Flask backend, integrating OCR for document processing and ChatGPT for extracting key deadlines to boost workflow efficiency. DOC intelligent Platform whe ",
-      github: "https://github.com/Amjath-s/mini-frontend",
-      demo: "",
-    },
-    {
-      project_name: "The Keycard Project ",
-      content:
-        " Developed the React.js Built a role-based employee management system with Admin and Security panels. Admins can add employees, auto-generate unique IDs with QR codes, and upload photos via Cloudinary. Security staff can scan QR codes to instantly verify employee details stored in MongoDB through a Node.js/Express backend. for an AI-powered document manager that used OCR and prompt-engineering with ChatGPT to automate deadline tracking and enhance workflow efficiency an AI-powered office documentation and deadline tracker with a React.js frontend and Flask backend, integrating OCR for document processing and ChatGPT for extracting key deadlines to boost workflow efficiency. DOC intelligent Platform whe ",
-      github: "https://github.com/Amjath-s/employee_idgenerator",
-      demo: "",
-    },
-  ];
-
+ 
   useEffect(() => {
     // animate ONLY the hero content children, not the background
     const ctx = gsap.context(() => {
@@ -158,6 +64,35 @@ export default function Portfolio() {
     return () => ctx.revert();
   }, []);
 
+
+
+  const handleSubmit= async (e)=>
+  {
+    e.preventDefault();
+    setLoading(true)
+
+    try
+    {
+      const response=await axios.post('http://localhost:3001/api/contact',{name,email,message})
+      if (response.status === 200) {
+        alert('Message sent!');
+        setName('');
+        setEmail('');
+        setMessage('');
+      } else {
+        alert('Failed to send message');
+      }
+    } catch (error) {
+      alert('Error sending message');
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+    
+      
+
+
+  }
   return (
     <div className="w-full min-h-screen bg-gray-50 text-gray-900">
       {/* ===== HERO ===== */}
@@ -445,34 +380,41 @@ export default function Portfolio() {
         className="reveal min-h-screen flex flex-col items-center justify-center px-6 py-20 bg-gray-100"
       >
         <h2 className="text-4xl font-bold mb-6">Contact Me</h2>
-        <form className="w-full max-w-lg space-y-4">
+        <form className="w-full max-w-lg space-y-4" onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Your Name"
             className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+            value={name}
+            onChange={e=>setName(e.target.value)}
+            required
           />
           <input
             type="email"
             placeholder="Your Email"
             className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+            onChange={e=>setEmail(e.target.value)}
+            value={email}
+            required
           />
           <textarea
             placeholder="Your Message"
             rows="4"
             className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+            onChange={e=>setMessage(e.target.value)}
+            value={message}
+            required
           />
           <button
-            disabled={true}
+            type='submit'
+            disabled={loading}
+           
             className={` w-full py-3 rounded-lg bg-cyan-500 text-black font-medium hover:bg-cyan-400 transition  `}
           >
-            Send Message (Currently Disabled)
+            Send Message 
           </button>
-        </form>
-        <p className="text-center text-sm text-gray-500 mt-6">
-          This contact form is currently not functional. It was implemented as a
-          placeholder for portfolio submission and will be fully enabled soon.
-          Thank you for your understanding!
-        </p>
+        </form> 
+       
       </section>
 
       {/* ===== FOOTER ===== */}

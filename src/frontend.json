@@ -1,0 +1,38 @@
+[
+  {
+    "name": "React",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "level": 65,
+    "tag": "Intermediate"
+  },
+  {
+    "name": "Node.js",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    "level": 60,
+    "tag": "Intermediate"
+  },
+  {
+    "name": "MongoDB",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    "level": 55,
+    "tag": "Beginner/Intermediate"
+  },
+  {
+    "name": "Express",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    "level": 55,
+    "tag": "Beginner/Intermediate"
+  },
+  {
+    "name": "Tailwind",
+    "logo": "https://cdn.jsdelivr.net/gh/tailwindlabs/tailwindcss/.github/logo-dark.svg",
+    "level": 55,
+    "tag": "Beginner/Intermediate"
+  },
+  {
+    "name": "Javascript",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+    "level": 65,
+    "tag": "Intermediate"
+  }
+]

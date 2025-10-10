@@ -1,0 +1,20 @@
+[
+  {
+    "project_name": "DOC AI",
+    "content": "Developed the React.js frontend for an AI-powered document manager that used OCR and prompt-engineering with ChatGPT to automate deadline tracking and enhance workflow efficiency — an AI-powered office documentation and deadline tracker with a React.js frontend and Flask backend, integrating OCR for document processing and ChatGPT for extracting key deadlines to boost workflow efficiency.",
+    "github": "https://github.com/Amjath-s/mini-frontend",
+    "demo": ""
+  },
+  {
+    "project_name": "The Keycard Project",
+    "content": "Built a role-based employee management system with Admin and Security panels. Admins can add employees, auto-generate unique IDs with QR codes, and upload photos via Cloudinary. Security staff can scan QR codes to instantly verify employee details stored in MongoDB through a Node.js/Express backend.",
+    "github": "https://github.com/Amjath-s/employee_idgenerator",
+    "demo": ""
+  },
+  {
+    "project_name":"Medium-like-BlogPost",
+    "content":"Developed a Medium-like blogging platform that allows users to create and publish rich-text posts, follow other users, view trending articles, like and comment on posts. Appwrite was used as the backend service for authentication, database, and storage management.",
+    "github":" ",
+    "demo":"https://blogging-eosin-iota.vercel.app/"
+  }
+]
