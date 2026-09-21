@@ -1,20 +1,105 @@
 [
   {
     "project_name": "DOC AI",
-    "content": "Developed the React.js frontend for an AI-powered document manager that used OCR and prompt-engineering with ChatGPT to automate deadline tracking and enhance workflow efficiency — an AI-powered office documentation and deadline tracker with a React.js frontend and Flask backend, integrating OCR for document processing and ChatGPT for extracting key deadlines to boost workflow efficiency.",
     "github": "https://github.com/Amjath-s/mini-frontend",
-    "demo": ""
+    "demo": "",
+    "coverImage": "",
+    "overview": "DOC AI is an AI-powered office documentation and deadline tracker. It helps teams process documents faster by combining OCR with prompt-engineering so key dates and deadlines surface automatically.",
+    "overviewExtra": "Built as a React.js frontend with a Flask backend, the product focuses on workflow efficiency — turning messy docs into actionable tracking instead of manual follow-ups.",
+    "technologies": ["React.js", "Flask", "OCR", "ChatGPT", "JavaScript"],
+    "featuresIntro": "The platform centers on smart extraction and a clean UI for day-to-day document work:",
+    "features": [
+      "OCR-based document processing for scanned and uploaded files",
+      "ChatGPT prompt-engineering to extract key deadlines from content",
+      "React.js frontend for managing documents and tracking deadlines",
+      "Flask API integration for backend processing and workflow support"
+    ],
+    "challenges": [
+      {
+        "title": "Reliable deadline extraction",
+        "body": "Documents vary wildly in format. Tuning OCR output and prompts so deadlines stay accurate across different layouts was a core challenge."
+      }
+    ],
+    "conclusion": "DOC AI reinforced how frontend UX and AI pipelines meet in real products — and how careful prompting plus OCR can cut repetitive office work."
   },
   {
     "project_name": "The Keycard Project",
-    "content": "Built a role-based employee management system with Admin and Security panels. Admins can add employees, auto-generate unique IDs with QR codes, and upload photos via Cloudinary. Security staff can scan QR codes to instantly verify employee details stored in MongoDB through a Node.js/Express backend.",
     "github": "https://github.com/Amjath-s/employee_idgenerator",
-    "demo": ""
+    "demo": "",
+    "coverImage": "",
+    "overview": "The Keycard Project is a role-based employee management system with Admin and Security panels. It streamlines ID creation and on-site verification with QR codes.",
+    "overviewExtra": "Admins add employees, generate unique IDs with QR codes, and upload photos via Cloudinary. Security staff scan QR codes to verify details stored in MongoDB.",
+    "technologies": ["Node.js", "Express", "MongoDB", "Cloudinary", "QR codes"],
+    "featuresIntro": "Built for two clear roles — administration and security verification:",
+    "features": [
+      "Admin panel to add employees and manage records",
+      "Auto-generated unique IDs with QR codes",
+      "Photo uploads via Cloudinary",
+      "Security panel for instant QR-based employee verification",
+      "MongoDB + Node.js/Express backend for storage and APIs"
+    ],
+    "challenges": [
+      {
+        "title": "Role-based access clarity",
+        "body": "Separating Admin and Security flows cleanly — without leaking privileges — required careful API and UI boundaries."
+      }
+    ],
+    "conclusion": "Keycard showed how a focused full-stack tool can replace paper badges with a fast, scannable verification loop."
   },
   {
-    "project_name":"Medium-like-BlogPost",
-    "content":"Developed a Medium-like blogging platform that allows users to create and publish rich-text posts, follow other users, view trending articles, like and comment on posts. Appwrite was used as the backend service for authentication, database, and storage management.",
-    "github":" ",
-    "demo":"https://blogging-eosin-iota.vercel.app/"
+    "project_name": "Medium-like-BlogPost",
+    "github": "",
+    "demo": "https://blogging-eosin-iota.vercel.app/",
+    "coverImage": "",
+    "overview": "A Medium-like blogging platform where users create and publish rich-text posts, follow others, explore trending articles, and engage with likes and comments.",
+    "overviewExtra": "Appwrite powers authentication, database, and storage so the app stays focused on writing and community features without a custom auth stack.",
+    "technologies": ["React", "Appwrite", "Rich text editor", "Vercel"],
+    "featuresIntro": "Core blogging and social loops included:",
+    "features": [
+      "Create and publish rich-text posts",
+      "Follow other users and browse feeds",
+      "Trending articles discovery",
+      "Like and comment on posts",
+      "Appwrite auth, database, and storage"
+    ],
+    "challenges": [
+      {
+        "title": "Content and auth with BaaS",
+        "body": "Modeling posts, follows, and engagement on Appwrite while keeping the UI responsive took iteration on collections and permissions."
+      }
+    ],
+    "conclusion": "The blog platform was a strong exercise in product-shaped full-stack work — publishing UX plus a managed backend."
+  },
+  {
+    "project_name": "AI-Based Adaptive Learning Platform for Children with Disabilities",
+    "github": "",
+    "demo": "",
+    "coverImage": "",
+    "overview": "An AI-driven learning platform for children with disabilities, featuring real-time emotion detection, stress intervention, and interactive letter practice.",
+    "overviewExtra": "The experience pairs a responsive frontend with API integration so learning moments adapt when a child shows stress or disengagement.",
+    "technologies": [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "JavaScript",
+      "Flask",
+      "MongoDB",
+      "OpenCV"
+    ],
+    "featuresIntro": "Designed around supportive, adaptive learning:",
+    "features": [
+      "Real-time emotion detection with OpenCV",
+      "Stress intervention cues when learners need support",
+      "Interactive letter practice activities",
+      "Responsive frontend with Bootstrap",
+      "Flask APIs and MongoDB for backend data"
+    ],
+    "challenges": [
+      {
+        "title": "Emotion detection in real time",
+        "body": "Keeping OpenCV detection responsive in the browser/API loop while remaining gentle and useful for learners required careful UX and performance trade-offs."
+      }
+    ],
+    "conclusion": "This project connected AI perception with inclusive education — building features that adapt to how a child feels, not only what they click."
   }
 ]

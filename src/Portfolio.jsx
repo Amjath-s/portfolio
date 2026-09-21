@@ -1,71 +1,29 @@
-import { useEffect, useState } from "react";
 import ProfileSidebar from "./ProfileSidebar";
-import ProfileTabs from "./ProfileTabs";
+import RepoFileList from "./RepoFileList";
+import SectionView from "./SectionView";
+import ProjectDetail from "./ProjectDetail";
+import { usePath } from "./nav";
 import { TABS } from "./data/profile";
 
-function getTabFromHash() {
-  const hash = window.location.hash.replace("#", "");
-  if (TABS.some((t) => t.id === hash)) return hash;
-  return "about";
-}
-
-function TabPanel({ id, active, title, children }) {
-  if (id !== active) return null;
-  return (
-    <section
-      id={`panel-${id}`}
-      role="tabpanel"
-      aria-labelledby={`tab-${id}`}
-      className="profile-panel"
-    >
-      <h2 className="profile-panel-title">{title}</h2>
-      {children}
-    </section>
-  );
-}
-
 export default function Portfolio() {
-  const [activeTab, setActiveTab] = useState(getTabFromHash);
+  const path = usePath();
+  const parts = path.replace(/^\//, "").split("/").filter(Boolean);
+  const sectionId = parts[0] || "";
+  const projectSlug = sectionId === "projects" ? parts[1] : null;
+  const isSection = TABS.some((t) => t.id === sectionId);
 
-  useEffect(() => {
-    const onHash = () => setActiveTab(getTabFromHash());
-    window.addEventListener("hashchange", onHash);
-    return () => window.removeEventListener("hashchange", onHash);
-  }, []);
-
-  function handleTabChange(id) {
-    setActiveTab(id);
-    window.location.hash = id;
+  let main = <RepoFileList />;
+  if (projectSlug) {
+    main = <ProjectDetail slug={projectSlug} />;
+  } else if (isSection) {
+    main = <SectionView sectionId={sectionId} />;
   }
 
   return (
     <div className="profile-page">
       <div className="profile-shell">
         <ProfileSidebar />
-
-        <div className="profile-main">
-          <ProfileTabs activeTab={activeTab} onChange={handleTabChange} />
-
-          <div className="profile-panels">
-            <TabPanel id="about" active={activeTab} title="About">
-              <p className="profile-placeholder">
-                About content and contribution graph come in Phase 2.
-              </p>
-            </TabPanel>
-
-            <TabPanel id="projects" active={activeTab} title="Projects">
-              <p className="profile-placeholder">
-                Project list comes in Phase 3.
-              </p>
-            </TabPanel>
-
-            <TabPanel id="resume" active={activeTab} title="Resume">
-              <p className="profile-placeholder">
-                Resume content comes in Phase 5.
-              </p>
-            </TabPanel>
-          </div>
-        </div>
+        <div className="profile-main">{main}</div>
       </div>
     </div>
   );
