@@ -1,5 +1,35 @@
 [
   {
+    "project_name": "YIP — Website & Control Panel",
+    "github": "",
+    "demo": "https://yip.kerala.gov.in/",
+    "coverImage": "",
+    "overview": "As part of my internship at K-DISC, I work on the YIP (Young Innovators Programme) platform — building and maintaining the public website and internal control panel used to run programme workflows.",
+    "overviewExtra": "The role covers ongoing maintenance, shipping new features, and keeping the stack reliable for real users across the programme.",
+    "technologies": [
+      "Next.js",
+      "Node.js",
+      "Express",
+      "AWS",
+      "JavaScript"
+    ],
+    "featuresIntro": "Day-to-day work on YIP includes:",
+    "features": [
+      "Building and maintaining the YIP website experience",
+      "Developing and improving the control panel for programme operations",
+      "Shipping new features end-to-end on the existing platform",
+      "API work with Node.js and Express",
+      "Deployment and cloud support on AWS"
+    ],
+    "challenges": [
+      {
+        "title": "Maintaining a live programme platform",
+        "body": "Shipping features on a production site used for a statewide innovation programme means balancing new work with stability, clear UX, and careful releases."
+      }
+    ],
+    "conclusion": "YIP has been hands-on experience maintaining a real product — website + control panel — with Next.js, Node/Express, and AWS in a government innovation setting."
+  },
+  {
     "project_name": "DOC AI",
     "github": "https://github.com/Amjath-s/mini-frontend",
     "demo": "",

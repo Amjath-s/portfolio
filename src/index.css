@@ -59,7 +59,7 @@
   }
 }
 
-/* —— Profile page shell (Phase 1) —— */
+/* ââ Profile page shell (Phase 1) ââ */
 
 .profile-page {
   min-height: 100vh;
@@ -280,9 +280,32 @@
   color: var(--text);
 }
 
+.repo-file-row.is-static {
+  cursor: default;
+}
+
+.repo-file-row.is-static:hover {
+  background: transparent;
+}
+
 .repo-file-row.is-active {
   background: rgba(56, 139, 253, 0.1);
 }
+
+.extras-hint {
+  margin: 0.85rem 1rem 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.extras-hint code {
+  font-size: 0.75rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--chip-bg);
+}
+
 
 .repo-file-row.is-active .repo-file-name {
   color: var(--accent);
@@ -388,7 +411,7 @@
   line-height: 1.5;
 }
 
-/* —— About + contribution graph (Phase 2) —— */
+/* ââ About + contribution graph (Phase 2) ââ */
 
 .about-panel {
   display: flex;
@@ -768,7 +791,7 @@
   }
 }
 
-/* —— Projects list (Phase 3) —— */
+/* ââ Projects list (Phase 3) ââ */
 
 .projects-panel {
   margin: 0.75rem -1.25rem -1.75rem;
@@ -819,7 +842,7 @@
   font-size: 0.95rem;
 }
 
-/* —— Project detail Currencee-style (Phase 4) —— */
+/* ââ Project detail Currencee-style (Phase 4) ââ */
 
 .pd-hero {
   display: flex;
@@ -941,7 +964,7 @@
   color: var(--text);
 }
 
-/* �� Resume (Phase 5) �� */
+/* ï¿½ï¿½ Resume (Phase 5) ï¿½ï¿½ */
 
 .resume-panel {
   display: flex;

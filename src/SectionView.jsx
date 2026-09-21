@@ -3,6 +3,7 @@ import { profile, TABS } from "./data/profile";
 import AboutPanel from "./AboutPanel";
 import ProjectsList from "./ProjectsList";
 import ResumePanel from "./ResumePanel";
+import { AchievementsPanel, HackathonsPanel } from "./ExtrasPanels";
 
 export default function SectionView({ sectionId }) {
   const section = TABS.find((t) => t.id === sectionId);
@@ -40,6 +41,10 @@ export default function SectionView({ sectionId }) {
         <AboutPanel />
       ) : section.id === "projects" ? (
         <ProjectsList />
+      ) : section.id === "hackathons" ? (
+        <HackathonsPanel />
+      ) : section.id === "achievements" ? (
+        <AchievementsPanel />
       ) : section.id === "resume" ? (
         <ResumePanel />
       ) : null}

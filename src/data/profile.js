@@ -45,6 +45,20 @@ export const TABS = [
     meta: "Updated",
   },
   {
+    id: "hackathons",
+    label: "Hackathons",
+    kind: "folder",
+    description: "Events built and shipped under pressure",
+    meta: "New",
+  },
+  {
+    id: "achievements",
+    label: "Achievements",
+    kind: "folder",
+    description: "Wins, recognition, and milestones",
+    meta: "New",
+  },
+  {
     id: "resume",
     label: "Resume",
     kind: "file",
