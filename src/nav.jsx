@@ -1,24 +1,35 @@
 import { useEffect, useState } from "react";
 
-/** Lightweight hash router — no react-router dependency. */
+/** Path-based SPA router (no hash). */
 export function getPath() {
-  const raw = window.location.hash.replace(/^#/, "") || "/";
-  return raw.startsWith("/") ? raw : `/${raw}`;
+  const path = window.location.pathname || "/";
+  return path.startsWith("/") ? path : `/${path}`;
 }
 
 export function navigate(to) {
   const path = to.startsWith("/") ? to : `/${to}`;
   if (getPath() === path) return;
-  window.location.hash = path;
+  window.history.pushState({}, "", path);
+  window.dispatchEvent(new PopStateEvent("popstate"));
 }
 
 export function Link({ to, className, children, ...rest }) {
-  const href = `#${to.startsWith("/") ? to : `/${to}`}`;
+  const href = to.startsWith("/") ? to : `/${to}`;
   return (
     <a
       href={href}
       className={className}
       onClick={(e) => {
+        if (
+          e.defaultPrevented ||
+          e.button !== 0 ||
+          e.metaKey ||
+          e.altKey ||
+          e.ctrlKey ||
+          e.shiftKey
+        ) {
+          return;
+        }
         e.preventDefault();
         navigate(to);
       }}
@@ -29,16 +40,27 @@ export function Link({ to, className, children, ...rest }) {
   );
 }
 
+/** Migrate old `/#/about` style URLs to `/about`. */
+function migrateHashRoute() {
+  const hash = window.location.hash.replace(/^#/, "");
+  if (!hash) return;
+  const path = hash.startsWith("/") ? hash : `/${hash}`;
+  window.history.replaceState({}, "", path);
+}
+
 export function usePath() {
-  const [path, setPath] = useState(getPath);
+  const [path, setPath] = useState(() => {
+    migrateHashRoute();
+    return getPath();
+  });
 
   useEffect(() => {
-    const onHash = () => setPath(getPath());
-    window.addEventListener("hashchange", onHash);
-    if (!window.location.hash) {
-      window.location.hash = "/";
-    }
-    return () => window.removeEventListener("hashchange", onHash);
+    migrateHashRoute();
+    setPath(getPath());
+
+    const onPop = () => setPath(getPath());
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
   }, []);
 
   return path;
