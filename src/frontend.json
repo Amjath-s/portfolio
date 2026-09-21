@@ -34,5 +34,35 @@
     "logo": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
     "level": 65,
     "tag": "Intermediate"
+  },
+  {
+    "name": "AWS",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+    "level": 35,
+    "tag": "Beginner"
+  },
+  {
+    "name": "AWS EC2",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+    "level": 30,
+    "tag": "Beginner"
+  },
+  {
+    "name": "AWS Amplify",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+    "level": 30,
+    "tag": "Beginner"
+  },
+  {
+    "name": "Flutter",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
+    "level": 60,
+    "tag": "Intermediate"
+  },
+  {
+    "name": "Firebase",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+    "level": 60,
+    "tag": "Intermediate"
   }
 ]

@@ -18,6 +18,18 @@
     "tag": "Beginner"
   },
   {
+    "name": "PostgreSQL",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    "level": 55,
+    "tag": "Beginner/Intermediate"
+  },
+  {
+    "name": "SQL",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg",
+    "level": 55,
+    "tag": "Beginner/Intermediate"
+  },
+  {
     "name": "C",
     "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
     "level": 40,
