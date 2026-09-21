@@ -7,9 +7,16 @@ dotenv.config();
 const app = express();
 
 const allowedOrigins = [
-  "https://portfolio-six-sage-35.vercel.app",
   "http://localhost:5173",
   "http://127.0.0.1:5173",
+  "https://amjaths.com",
+  "https://www.amjaths.com",
+  "https://portfolio-steel-rho-42.vercel.app",
+  "https://portfolio-six-sage-35.vercel.app",
+  ...(process.env.CORS_ORIGINS || "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean),
 ];
 
 app.use(
